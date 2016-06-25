@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
+html {
+	overflow-x : hidden;
+	overflow-y : auto;
+	}
 
 body{
 	margin:0 auto;
@@ -89,7 +93,9 @@ a {
 	border: none;
 	}
 #menu li a:hover{
-	background: #258c82;
+	color: #fff;
+	background: rgba(37,140,130, 0.7);
+	transition: all .7s;
 	}
 
 #toggle {
@@ -167,7 +173,7 @@ a {
 #co-concept .text-box h1 {
 	color: inherit;
 	font-size: 20px;
-	width: 90vw;
+	width: 70vw;
 	margin: 0 auto;
 	}
 #co-concept .text-box p {
@@ -255,6 +261,10 @@ a {
 	-webkit-margin-start: 5vw;
 	}
 
+#co-ap .map iframe{
+	width: 90vw;
+	height: 440px;
+	}
 #co-ap table {
 	margin: 20px auto;
     border-collapse: separate;
@@ -267,17 +277,16 @@ a {
 	padding: 10px;
 	}
 #co-ap table th {
-    background: #295890;
+    background: #e1ef8b;
     vertical-align: middle;
     text-align: left;
     width: 100px;
     overflow: visible;
     position: relative;
-    color: #fff;
+    color: #000;
     font-weight: normal;
     font-size: 15px;
 }
- 
 #co-ap table th:after {
     left: 100%;
     top: 50%;
@@ -288,33 +297,65 @@ a {
     position: absolute;
     pointer-events: none;
     border-color: rgba(136, 183, 213, 0);
-    border-left-color: #295890;
+    border-left-color: #e1ef8b;
     border-width: 10px;
     margin-top: -10px;
 }
 /* firefox */
 @-moz-document url-prefix() {
     #co-ap table th:after {
-        float: right;
-        padding: 0;
-        left: 30px;
-        top: 10px;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: relative;
-        pointer-events: none;
-        border: 10px solid transparent;
-        border-left: #295890 10px solid;
-        margin-top: -10px;
+	float: right;
+	padding: 0;
+	left: 30px;
+	top: 10px;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: relative;
+	pointer-events: none;
+	border: 10px solid transparent;
+	margin-top: -10px;
     }
 }
- 
 #co-ap table td {
+	padding-left: 40px;
     background: #f8f8f8;
-    width: 360px;
-    padding-left: 20px;
-}
+    text-align: start;
+    }
+#co-ap .post {
+	flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	text-align: center;
+	width: 100%;
+	margin:0 auto;
+    }
+	
+#scroll-top {
+	cursor: pointer;
+	padding: 2px 15px;
+	display: inline-block;
+	position: fixed;
+	right: 40px;
+	bottom: 30px;
+	text-align: center;
+	font-size: 15px;
+	background: rgba(255,255,255, 0.55);
+	border:1px solid #258c82;
+	border-radius: 5px;
+	}
+#scroll-top p {
+	margin: 15px 0 0 0;
+	}
+#scroll-top h2 {
+	margin: 3px;
+	}
+#scroll-top:hover {
+	color: #fff;
+	background: rgba(37,140,130, 0.7);
+	transition: all .7s;
+	}
 	
 footer {
 	text-align: center;
