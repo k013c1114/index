@@ -69,7 +69,7 @@
     }
     #nav-toggle {
     display: block;
-	right: 44px;
+	right: 20px;
     }
     /* #nav-toggle 切り替えアニメーション */
     .open #nav-toggle span:nth-child(1) {
