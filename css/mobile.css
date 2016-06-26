@@ -10,60 +10,96 @@
 
 /* 画面サイズが900px以下の場合に適用 */
 @media only screen and (max-width: 900px) {
-	/*#menu li {
-		width: 25%;
-		border-bottom: 1px solid #4baacb;
-	}*/
-	
-	#menu {
-		display: none;
-	}
-	#menu li {
-		width: 100%;
-	}
-	#toggle {
-		display: block;
-		position: fixed;
-		z-index: 1;
-		width: 100%;
-		background: #258c82;
-	}
-	#toggle a{
-		display: block;
-		position: relative;
-		padding: 20px 0 20px;
-		border-bottom: 1px solid #4baacb;
-		color:#FFF;
-		text-align: center;
-		text-decoration: none;
-	}
-	#toggle:before {
-		display: block;
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: 10px;
-		width: 30px;
-		height: 30px;
-		margin-top: -15px;
-		background: #FFF;
-	}
-	#toggle a:before, #toggle a:after {
-		display: block;
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: 10px;
-		width: 30px;
-		height: 6px;
-		background: #258c82;
-	}
-	#toggle a:before {
-		margin-top:-9px;
-	}
-	#toggle a:after {
-		margin-top: 3px;
-	}
+	#top-head,
+    .inner {
+        width: 100%;
+        padding: 0;
+    }
+    #top-head {
+        top: 0;
+        position: fixed;
+        margin-top: 0;
+    }
+    /* Fixed reset */
+    #top-head.fixed {
+        padding-top: 0;
+        background: transparent;
+    }
+    #mobile-head {
+        background: #fff;
+        width: 100%;
+        height: 56px;
+        z-index: 999;
+        position: relative;
+    }
+    #top-head.fixed .logo,
+    #top-head .logo {
+    position: absolute;
+    left: 7px;
+    top: 0px;
+    color: #333;
+    font-size: 18px;
+    }
+    #global-nav {
+	position: absolute;
+	/* 開いてないときは画面外に配置 */
+	top: -500px;
+	background: #258c82;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+    }
+    #global-nav ul {
+	list-style: none;
+	flex-direction: column;
+	position: static;
+	right: 0;
+	bottom: 0;
+	font-size: 14px;
+    }
+    #global-nav ul li {
+	float: none;
+	position: static;
+    }
+    #top-head #global-nav ul li a,
+    #top-head.fixed #global-nav ul li a {
+	width: 100%;
+	display: block;
+	text-align: left;
+	color: #fff;
+	padding: 18px 0;
+    }
+    #nav-toggle {
+    display: block;
+	right: 44px;
+    }
+    /* #nav-toggle 切り替えアニメーション */
+    .open #nav-toggle span:nth-child(1) {
+	top: 11px;
+	-webkit-transform: rotate(315deg);
+	-moz-transform: rotate(315deg);
+	transform: rotate(315deg);
+    }
+    .open #nav-toggle span:nth-child(2) {
+	width: 0;
+	left: 50%;
+    }
+    .open #nav-toggle span:nth-child(3) {
+	top: 11px;
+	-webkit-transform: rotate(-315deg);
+	-moz-transform: rotate(-315deg);
+	transform: rotate(-315deg);
+    }
+    /* #global-nav スライドアニメーション */
+    .open #global-nav {
+	/* #global-nav top + #mobile-head height */
+	-moz-transform: translateY(556px);
+	-webkit-transform: translateY(556px);
+	transform: translateY(556px);
+    }
 	
 	.res-img .text-box {
 	top: 5vw;
@@ -71,6 +107,18 @@
 	
 	.res-img .text-box h1 {
 	font-size: 60px; 
+	}
+	
+	#icon01 img {
+    width: 60vw;
+	}
+	
+}
+
+/* 画面サイズが770px以下の場合に適用 */
+@media only screen and (max-width: 770px) {
+	#co-menu dl.menu-block {
+    width: 50vw;
 	}
 }
 
@@ -82,9 +130,42 @@
 	.res-img .text-box h1 {
 	font-size: 50px; 
 	}
+	
+	#panel-group01 .panel {
+    width: 100vw;
+	}
+	
+	.bx-wrapper .bx-caption span {
+    font-size: 1.3em !important; 
+	}
+	
+	#co-menu .menu-block {
+    margin: 10px 0 30px 0;
+	}
+	#co-menu .menu-block .card {
+    width: 90vw;
+	}
+	#co-menu dl.menu-block {
+    width: 100vw;
+	}
+	
+	#co-ap ul.post li {
+    width: 50vw;
+	}
+	#co-ap ul.post li img {
+    width: 30vw;
+    margin: 0 auto;
+	}
+	
+	#scroll-top p {
+    margin: 0;
+	}
+	#scroll-top h2 {
+    margin: -4px;
+	}
 }
 
-/* 画面サイズが480px以下の場合に適用 */
+/* 画面サイズが320px以下の場合に適用 */
 @media only screen and (max-width: 320px) {
 	.res-img .text-box {
 	top: 10vw;
@@ -92,4 +173,9 @@
 	.res-img .text-box h1 {
 	font-size: 33px; 
 	}
+	
+	#co-ne ul li {
+    width: 100vw;
+	}
+	
 }

@@ -29,6 +29,26 @@
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
     
+	<script>
+    (function($) {
+        $(function() {
+            var $header = $('#top-head');
+            // Nav Fixed
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 350) {
+                    $header.addClass('fixed');
+                } else {
+                    $header.removeClass('fixed');
+                }
+            });
+            // Nav Toggle Button
+            $('#nav-toggle').click(function(){
+                $header.toggleClass('open');
+            });
+        });
+    })(jQuery);
+    </script>
+    
     <script>
 		$(document).ready(function(){
 			$('.bxslider').bxSlider({
@@ -45,18 +65,38 @@
 
 <body>
 
-    <nav id="menu-box">
+<header id="top-head">
+    <div class="inner">
+        <div id="mobile-head">
+            <h1 class="logo">givers <br>tea room</h1>
+            <div id="nav-toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!--/nav-toggle-->
+        </div><!--/mobile-head-->
+        <nav id="global-nav">
+            <ul>
+                <li><a class="menu-list" href="#jumbotron01">トップ</a></li>
+                <li><a class="menu-list" href="#list01">コンセプト</a></li>
+                <li><a class="menu-list" href="#list02">メニュー</a></li>
+                <li><a class="menu-list" href="#list03">ニュース</a></li>
+                <li><a class="menu-list" href="#list04">アクセス＆ポスト</a></li>
+            </ul>
+        </nav>
+    </div><!--/inner-->
+</header>
+
+<!--    <nav id="menu-box">
         <div id="toggle">
             <a href="#">givers tea room</a>
         </div>
         <ul id="menu" class="">
-            <li><a class="menu-list" href="#jumbotron01">トップ</a></li>
-            <li><a class="menu-list" href="#list01">コンセプト</a></li>
-            <li><a class="menu-list" href="#list02">メニュー</a></li>
-            <li><a class="menu-list" href="#list03">ニュース</a></li>
-            <li><a class="menu-list" href="#list04">アクセス<br>＆ポスト</a></li>
+            
         </ul>
-    </nav>
+    </nav>-->
     
     <div id="container">
     	<div class="res-img" id="jumbotron01">
@@ -69,7 +109,7 @@
         	<img src="images/icon01.png" alt="givers tea room 2016">
         </div><!--/res-img-->
         <div class="panel-group" id="panel-group01">
-        	<a href="">
+        	<a class="menu-list" href="#list01">
                 <section class="panel" id="panel01">
                     <h1>コンセプト</h1>
                     <h2>
@@ -81,7 +121,7 @@
                     </p>
                 </section>
             </a>
-            <a href="">
+            <a class="menu-list" href="#list02">
    			 	<section class="panel" id="panel02">
                    	<h1>メニュー</h1>
                     <h2>
@@ -93,7 +133,7 @@
                     </p> 
                 </section>
             </a>
-            <a href="">
+            <a class="menu-list" href="#list03">
    			 	<section class="panel" id="panel03">
                     <h1>ニュース</h1>
                     <h2>
@@ -104,7 +144,7 @@
                     </p>
                 </section>
             </a>
-            <a href="">
+            <a class="menu-list" href="#list04">
    			 	<section class="panel" id="panel04">
                     <h1>アクセス＆ポスト</h1>
                     <h2>
@@ -315,7 +355,7 @@
                     <img src="./images/img29.jpg" alt="">
                 </div><!--/res-img-->
                 <h3>2016年８月１日まで！</h3>
-                <p>厳選された良質なハーブを使ったハーブティーをご提供しております。イベントメニューは夏季の通りです。</p>
+                <p>厳選された良質なハーブを使ったハーブティーをご提供しております。イベントメニューは下記の通りです。</p>
                 <ul>
                 	<li>
                     	アーティチョーク
@@ -417,9 +457,9 @@
             お席のご予約もこちらよりお願いいたします。
             </p>
             <ul class="post">
-            	<li>Retty</li>
-            	<li>食べログ</li>
-            	<li>ホットペッパー</li>
+            	<li><a href="#"><img src="./images/retty.png" alt="Retty"></a></li>
+            	<li><a href="#"><img src="./images/tabelog.png" alt="食べログ"></a></li>
+            	<li><a href="#"><img src="./images/hotpepper.png" alt="ホットペッパー"></a></li>
             </ul>
         </div><!--/co-ap-->
     </div><!--/container-->

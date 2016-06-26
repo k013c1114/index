@@ -27,19 +27,6 @@ $(function(){
 	});
 });
 
-/*$(function() {
-	$(".menu-list").click(function() {
-		// アンカーの値取得
-		var href= $(this).attr("href");
-		// 移動先を取得
-		var target = $(href == "#" || href == "" ? 'html' : href);
-		// 移動先を数値で取得
-		var position = target.offset().top;
-		// スムーススクロール
-		$('body,html').animate({scrollTop:position}, 700, 'swing');
-		return false;
-		});
-	});*/
 
 $(function() {
   $("#scroll-top").click(function() {
@@ -61,7 +48,6 @@ $(function() {
       $toTopButton.hide();
     }
   }
-
   // ウィンドウをスクロール・ロード・リサイズしたときを契機に、ボタンの表示・非表示を変更する
   $(window).scroll(changeButtonState)
            .load(changeButtonState)

@@ -14,6 +14,19 @@ a {
 	text-decoration: none;
 	}
 	
+ul {
+	display: -webkit-flexbox;
+    display: -moz-flexbox;
+    display: -ms-flexbox;
+    display: -o-flexbox;
+    display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	flex-direction: row;
+	-webkit-flex-direction: row;
+	list-style-type: none;
+	}
+	
 /*------パーツ-----*/
 
 /*画像つきジャンボトロン*/
@@ -63,43 +76,107 @@ a {
 }
 
 /*-----カスタム-----*/
-#menu {
-	z-index: 1;
-	width: 100%;
-	position: fixed;
-	margin: 0 auto;
-	padding: 0;
-	}
-#menu li{
-	display: block;
-	float: left;
-	width: 20vw;
-	margin: 0;
-	padding: 0;
-	}
-#menu li a {
-	display: block;
-	height: 37px;
-    overflow: hidden;
-	padding: 40px 0 40px;
-	background:none;
-	background: rgba(255,255,255, 0.55);
-	color: #111;
-	text-align: center;
-	text-decoration: none;
-	border-right:1px solid #258c82;
-	}
-#menu li:last-child a{
-	border: none;
-	}
-#menu li a:hover{
-	color: #fff;
-	background: rgba(37,140,130, 0.7);
-	transition: all .7s;
-	}
-
-#toggle {
-	display: none;
+.inner {
+    width: 80vw;
+    margin: 0 auto;
+}
+.inner:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+ 
+/* header */
+#top-head {
+    top: -100px;
+    position: absolute;
+    width: 100%;
+    margin: 100px auto 0;
+    padding: 30px 0 0;
+    line-height: 1;
+    z-index: 999;
+}
+#top-head a,
+#top-head {
+    color: #fff;
+    text-decoration: none;
+}
+#top-head .inner {
+    position: relative;
+}
+#top-head .logo {
+    float: left;
+    font-size: 26px;
+}
+#global-nav ul {
+    list-style: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+}
+#global-nav ul li {
+    float: left;
+}
+#global-nav ul li a {
+    padding: 0 25px;
+}
+ 
+/* Fixed */
+#top-head.fixed {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    padding-top: 10px;
+    height: 95px;
+    background: #fff;
+    background: rgba(255,255,255,.7);
+    transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
+}
+#top-head.fixed .logo {
+    font-size: 24px;
+    color: #333;
+}
+#top-head.fixed #global-nav ul li a {
+    color: #333;
+    padding: 0 20px;
+}
+ 
+/* Toggle Button */
+#nav-toggle {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 34px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 101;
+}
+#nav-toggle div {
+    position: relative;
+}
+#nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #666;
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+    top: 0;
+}
+#nav-toggle span:nth-child(2) {
+    top: 11px;
+}
+#nav-toggle span:nth-child(3) {
+    top: 22px;
 }
 
 #jumbotron01 {
@@ -119,18 +196,26 @@ a {
 #list01 {
  	color: #41332a;
   	background-color: #f1efa5;
+	margin: 0;
+	padding: 0;
 	}
 #list02 {
 	color: #41332a;
 	background-color: #6cd7a8;
+	margin: 0;
+	padding: 0;
 	}
 #list03 {
 	color: #41332a;
 	background-color: #dcc680;
+	margin: 0;
+	padding: 0;
 	}
 #list04 {
 	color: #41332a;
 	background-color: #d1e16f;
+	margin: 0;
+	padding: 0;
 	}
 	
 #panel-group01 {
@@ -242,13 +327,6 @@ a {
 
 #co-ne ul {
 	padding: 0;
-	display: -webkit-flexbox;
-    display: -moz-flexbox;
-    display: -ms-flexbox;
-    display: -o-flexbox;
-    display: flex;
-	flex-wrap: wrap;
-	list-style-type: none;
 	}
 #co-ne ul li {
 	width: 50vw;
@@ -322,22 +400,26 @@ a {
     background: #f8f8f8;
     text-align: start;
     }
-#co-ap .post {
-	flex-direction: row;
-	-webkit-flex-direction: row;
-	flex-wrap: wrap;
-	-webkit-flex-wrap: wrap;
-	text-align: center;
+#co-ap ul.post {
 	width: 100%;
 	margin:0 auto;
     }
-	
+#co-ap ul.post li {
+	text-align: left;
+	width: 30vw;
+	margin:0 auto;
+    }
+#co-ap ul.post li img {
+	width: 20vw;
+	margin:0 auto;
+    }
+
 #scroll-top {
 	cursor: pointer;
 	padding: 2px 15px;
 	display: inline-block;
 	position: fixed;
-	right: 40px;
+	right: 55px;
 	bottom: 30px;
 	text-align: center;
 	font-size: 15px;
@@ -358,6 +440,7 @@ a {
 	}
 	
 footer {
+	padding: 25px 0 0 0;
 	text-align: center;
 	width: 100vw;
 	}
