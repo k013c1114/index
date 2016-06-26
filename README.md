@@ -1,31 +1,14 @@
-# index
-課題提出用です
-
-
-====
-
+# Name
 givers tea room
 
-====
-
-## Description
-
-## Demo
-
-## VS. 
-
-## Requirement
-
-## Usage
-
-## Install
-
-## Contribution
-
-## Licence
-
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+## About
+課題提出用です。
+実際には存在していない仮店舗、Givers Tea Roomのコーポレートサイトです。
+このWebサイトはフィクションです。実在の人物または団体などとは一切関係ありません。
 
 ## Author
+Saki
+[tcnksm](http://jewel.16mb.com/)
 
-[tcnksm](https://github.com/tcnksm)
+## Last update
+2016/06/26
