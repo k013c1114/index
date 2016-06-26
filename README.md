@@ -8,7 +8,7 @@ givers tea room
 
 ## Author
 Saki
-[tcnksm](http://jewel.16mb.com/)
+[jewel.16.com](http://jewel.16mb.com/)
 
 ## Last update
 2016/06/26
