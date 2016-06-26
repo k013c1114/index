@@ -11,6 +11,7 @@ body{
 	margin:0 auto;
 	padding:0;
 	overflow-x : hidden;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 	}
 
 a {
@@ -55,7 +56,6 @@ ul {
 .res-img .text-box h1 {
 	font-size: 70px; 
 	color: #fff;
-	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 	}
 	
 /*パネル*/
@@ -110,6 +110,7 @@ ul {
 #top-head .logo {
     float: left;
     font-size: 26px;
+	font-family: 'Slabo 27px', serif;
 	}
 #global-nav ul {
     list-style: none;
@@ -442,5 +443,6 @@ ul {
 footer {
 	padding: 25px 0 0 0;
 	text-align: center;
+	font-family: bilbo-swash-caps;
 	width: 100vw;
 	}
