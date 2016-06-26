@@ -42,15 +42,10 @@
     }
     #global-nav {
 	position: absolute;
-	/* 開いてないときは画面外に配置 */
 	top: -500px;
 	background: #258c82;
 	width: 100%;
 	text-align: center;
-	padding: 10px 0;
-	-webkit-transition: .5s ease-in-out;
-	-moz-transition: .5s ease-in-out;
-	transition: .5s ease-in-out;
     }
     #global-nav ul {
 	list-style: none;
@@ -104,7 +99,6 @@
 	.res-img .text-box {
 	top: 5vw;
 	}
-	
 	.res-img .text-box h1 {
 	font-size: 60px; 
 	}

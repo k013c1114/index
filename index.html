@@ -33,14 +33,6 @@
     (function($) {
         $(function() {
             var $header = $('#top-head');
-            // Nav Fixed
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 350) {
-                    $header.addClass('fixed');
-                } else {
-                    $header.removeClass('fixed');
-                }
-            });
             // Nav Toggle Button
             $('#nav-toggle').click(function(){
                 $header.toggleClass('open');
@@ -65,7 +57,7 @@
 
 <body>
 
-<header id="top-head">
+<header id="top-head" class="fixed">
     <div class="inner">
         <div id="mobile-head">
             <h1 class="logo">givers <br>tea room</h1>
